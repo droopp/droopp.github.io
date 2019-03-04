@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Getting started - DROP</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Getting started";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> DROP</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Getting started</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#welcome-to-drop-distributed-reliable-operation-platform">Welcome to DROP (Distributed Reliable Operation Platform)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#installing-drop">Installing DROP</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#prerequisites">Prerequisites</a></li>
+        
+            <li><a class="toctree-l3" href="#installation-from-vagrantfile-local">Installation from Vagrantfile (local)</a></li>
+        
+            <li><a class="toctree-l3" href="#installation-from-rpm-packages">Installation from RPM packages</a></li>
+        
+            <li><a class="toctree-l3" href="#configuring-drop-node-after-set-up-systemctl-restart-drop-core">Configuring DROP node (after set up  - systemctl restart drop-core)</a></li>
+        
+            <li><a class="toctree-l3" href="#linux-system-optimisation-optional">Linux system optimisation (Optional)</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="architecture/">Architecture</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="tools/">Tools</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="plugins/">Plugins</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="examples/">Examples</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="facs/">FAQs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="tutor/">Totorials</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">DROP</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Getting started</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="welcome-to-drop-distributed-reliable-operation-platform">Welcome to DROP (Distributed Reliable Operation Platform)</h1>
+<pre><code>"                    ___           ___           ___    "
+"     _____         /\  \         /\  \         /\  \   "
+"    /::\  \       /::\  \       /::\  \       /::\  \  "
+"   /:/\:\  \     /:/\:\__\     /:/\:\  \     /:/\:\__\ "
+"  /:/  \:\__\   /:/ /:/  /    /:/  \:\  \   /:/ /:/  / "
+" /:/__/ \:|__| /:/_/:/__/___ /:/__/ \:\__\ /:/_/:/  /  "
+" \:\  \ /:/  / \:\/:::::/  / \:\  \ /:/  / \:\/:/  /   "
+"  \:\  /:/  /   \::/~~/~~~~   \:\  /:/  /   \::/__/    "
+"   \:\/:/  /     \:\~~\        \:\/:/  /     \:\  \    "
+"    \::/  /       \:\__\        \::/  /       \:\__\   "
+"     \/__/         \/__/         \/__/         \/__/   "
+"
+</code></pre>
+<p>DROP - Serverless Functions Made Simple</p>
+<p>Any process can be packaged as a function enabling you to consume a range of any events or other functions.</p>
+<p>Run code without thinking about servers.</p>
+<h1 id="installing-drop">Installing DROP</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>CentOS 7.3 or later, for the 64-bit x86_64 architecture.</li>
+<li>Yum package management application installed.</li>
+<li>Root or sudo access to the system.</li>
+</ul>
+<h2 id="installation-from-vagrantfile-local">Installation from Vagrantfile (local)</h2>
+<pre><code>curl -O https://raw.githubusercontent.com/droopp/vagrant/master/Vagrantfile .
+vagrant up
+</code></pre>
+<h2 id="installation-from-rpm-packages">Installation from RPM packages</h2>
+<pre><code>curl https://dropfaas.com/RPMS/drop-bootstrap.sh | sudo sh
+</code></pre>
+<h2 id="configuring-drop-node-after-set-up-systemctl-restart-drop-core">Configuring DROP node (after set up  - systemctl restart drop-core)</h2>
+<h3 id="inter-node-communication-interface-optional">Inter-node communication interface (Optional)</h3>
+<p>If you have more than one network interface and don't want to use default interface,
+you need configure name of inerface</p>
+<pre><code>sudo echo 'export DROP_IFACE=eth1' &gt;&gt; /home/drop-core/.bashrc
+</code></pre>
+<p>eth1 - example name of network interface</p>
+<p>By default node will be used default network interface </p>
+<h3 id="declare-nodes-optional">Declare nodes (Optional)</h3>
+<p>If your network not support multicast you need declare your nodes </p>
+<p>For example </p>
+<pre><code>sudo echo '192.168.50.4
+           192.168.50.5
+           192.168.50.6' &gt; /var/lib/drop/drop-hosts
+</code></pre>
+<p>By default nodes will declare self by multicast </p>
+<h2 id="linux-system-optimisation-optional">Linux system optimisation (Optional)</h2>
+<p>In production you need tune linux parameters for better performance</p>
+<pre><code> ulimit -n 
+ vm.swappiness
+ vm.vfs_cache_pressure
+ vm.dirty_ratio
+ vm.dirty_background_ratio
+ vm.dirty_writeback_centisecs
+ vm.dirty_expire_centisecs
+ kernel.panic
+ fs.file-max
+ net.core.netdev_max_backlog
+ net.core.somaxconn
+ net.ipv4.tcp_syncookies
+ net.ipv4.tcp_max_syn_backlog
+ net.ipv4.tcp_max_tw_buckets
+ net.ipv4.tcp_tw_recycle
+ net.ipv4.tcp_timestamps
+ net.ipv4.tcp_tw_reuse
+ net.ipv4.tcp_fin_timeout
+ net.ipv4.tcp_keepalive_time
+ net.ipv4.tcp_keepalive_probes
+ net.ipv4.tcp_keepalive_intvl
+ net.core.wmem_max
+ net.core.rmem_max
+ net.core.rmem_default
+ net.core.wmem_default
+ net.ipv4.tcp_rmem
+ net.ipv4.tcp_wmem
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="architecture/" class="btn btn-neutral float-right" title="Architecture">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="architecture/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-03-04 20:33:02
+-->
